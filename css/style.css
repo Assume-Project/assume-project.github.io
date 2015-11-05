@@ -11,6 +11,25 @@ body {
 	min-width: 100%;
 }
 
+table.tableizer-table {
+border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+margin-left: 15%;
+margin-bottom: 8%;
+margin-right: 15%;
+}
+.tableizer-table td {
+margin: 3px;
+border: 1px solid #ccc;
+padding: 1%;
+}
+.tableizer-table th {
+background-color: #04B431;
+color: #FFF;
+font-weight: bold;
+padding: 1%;
+}
+
 /*font-family: 'Ubuntu', sans-serif;*/
 
 a { color: #0252aa; text-decoration: none; cursor: pointer; }
@@ -181,6 +200,9 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 
 	.footer-bottom .footer-nav { float: none; display: block; text-align: center; padding-bottom: 18px;  }
 	.footer-bottom p.copy { float: none; display: block; text-align: center;  }
+	table.tableizer-table {
+	font-size: 14px;
+	}
 }
 
 
@@ -261,6 +283,11 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 	.footer-bottom p.copy { float: none; display: block; text-align: center;  }
 	.footer-bottom p.copy strong { display: block;  padding-top: 10px; }
 	.footer-bottom p.copy span { display: none; }
+
+
+	table.tableizer-table {
+	font-size: 14px;
+	}
 }
 
 @media only screen and ( max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi)  {
@@ -269,6 +296,9 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 	#navigation a.nav-btn span.arr.active { background: url(images/nav-arr@2x.png) no-repeat 0 bottom; -webkit-background-size: 13px 18px; -moz-background-size: 13px 18px; background-size: 13px 18px; }
 
 	#logo a { background: url(images/logo@2x.png) no-repeat 0 0; -webkit-background-size: 81px 33px; -moz-background-size: 81px 33px; background-size: 81px 33px;  }
+	table.tableizer-table {
+	font-size: 14px;
+	}
 }
 
 /*Table*/
@@ -335,24 +365,4 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 		{
 			font-size: 10px;
 			font-weight:bold;
-		}
-
-
-		table.tableizer-table {
-		border: 1px solid #CCC; font-family: Arial, Helvetica, sans-serif;
-		font-size: 18px;
-		margin-left: 15%;
-		margin-bottom: 8%;
-		}
-		.tableizer-table td {
-		padding: 4px;
-		margin: 3px;
-		border: 1px solid #ccc;
-		padding: 1%;
-		}
-		.tableizer-table th {
-		background-color: #04B431;
-		color: #FFF;
-		font-weight: bold;
-		padding: 1%;
 		}
