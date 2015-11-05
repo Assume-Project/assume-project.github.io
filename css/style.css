@@ -30,6 +30,75 @@ font-weight: bold;
 padding: 1%;
 }
 
+
+/*Table*/
+.Table
+    {
+        display: table;
+				margin-left: 12%;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Row
+    {
+        display: inline-table;
+    }
+    .Cell
+    {
+        display: inline-table;
+      /*  border: solid;
+        border-width: thin;*/
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+		.Box
+		{
+				display: block;
+				background-color: #D0F5A9;
+				border: 1px solid #E6E6E6;
+				border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px;
+				border-width: thin;
+				padding: 4%;
+				margin-left: 15px;
+				margin-bottom: 5%;
+				width: 200px;
+				height: 140px;
+		}
+		.Box img
+		{
+			max-width: 200px;
+			max-height: 50px;
+			margin-top: 7%;
+			margin-bottom: 7%;
+		}
+		.Box h3
+		{
+			font-size: 15px;
+		}
+		.Box .long
+		{
+			font-size: 13px;
+			font-weight:bold;
+		}
+		.Box .toolong
+		{
+			font-size: 10px;
+			font-weight:bold;
+		}
+
+
+
 /*font-family: 'Ubuntu', sans-serif;*/
 
 a { color: #0252aa; text-decoration: none; cursor: pointer; }
@@ -300,68 +369,4 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 	}
 }
 
-/*Table*/
-.Table
-    {
-        display: table;
-				margin-left: 12%;
-    }
-    .Title
-    {
-        display: table-caption;
-        text-align: center;
-        font-weight: bold;
-        font-size: larger;
-    }
-    .Heading
-    {
-        display: table-row;
-        font-weight: bold;
-        text-align: center;
-    }
-    .Row
-    {
-        display: table-row;
-    }
-    .Cell
-    {
-        display: table-cell;
-      /*  border: solid;
-        border-width: thin;*/
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-		.Box
-		{
-				display: block;
-				background-color: #D0F5A9;
-				border: 1px solid #E6E6E6;
-				border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px;
-				border-width: thin;
-				padding: 4%;
-				margin-left: 15px;
-				margin-bottom: 5%;
-				width: 200px;
-				height: 140px;
-		}
-		.Box img
-		{
-			max-width: 200px;
-			max-height: 50px;
-			margin-top: 7%;
-			margin-bottom: 7%;
-		}
-		.Box h3
-		{
-			font-size: 15px;
-		}
-		.Box .long
-		{
-			font-size: 13px;
-			font-weight:bold;
-		}
-		.Box .toolong
-		{
-			font-size: 10px;
-			font-weight:bold;
-		}
+
