@@ -116,17 +116,16 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 .socials { background: url(images/socials-bg.png) repeat-x 0 0;  height: 49px;  }
 .socials-inner { background: url(images/socials-inner.png) repeat-x 0 0; padding-left: 158px;}
 .socials h3 { float: left; font-size: 18px; line-height: 49px; padding-right: 19px; padding-bottom: 0; font-family: 'Ubuntu', sans-serif; font-weight: 500;  }
-.socials ul { list-style: none; list-style-position: outside; line-height: 49px;  }
+.socials ul { list-style: none; list-style-position: outside; line-height: 49px; margin: auto; width: 60%;}
 .socials ul li { font-size: 11px; padding-right: 18px;  color: #7c7c7c; background: transparent; text-transform: uppercase; float: left; }
 .socials ul li a { color: #7c7c7c; text-decoration: none; display: block; padding-left: 28px; position: relative;  }
-.socials ul li a span { background: url(images/socials.png) no-repeat 0 0; position: absolute; width: 20px; height: 20px; top: 13px; left: 0; }
+.socials ul li a span { background: url(images/socials.png) no-repeat 0 0; position: absolute; width: 24px; height: 24px; top: 13px; left: 0; }
 .socials ul li a:hover { color: #333; }
 
 .socials ul li a.facebook-ico span { background-position: 0 0; }
-.socials ul li a.twitter-ico span { background-position: -22px 0; }
-.socials ul li a.rss-feed-ico span { background-position: -44px 0; }
-.socials ul li a.myspace-ico span { background-position: -67px 0; }
-.socials ul li a.john-doe-123-ico span { background-position: -89px 0; }
+.socials ul li a.twitter-ico span { background-position: -25px 0; }
+.socials ul li a.github-ico span { background-position: -50px 0; }
+.socials ul li a.linkedin-ico span { background-position: -75px 0; }
 
 #footer { background: url(images/footer-cols.png) repeat 0 0; }
 #footer h2 { font-size: 23px; color: #fff; font-family: 'Ubuntu', sans-serif; font-weight: 400; padding-bottom: 18px;  }
