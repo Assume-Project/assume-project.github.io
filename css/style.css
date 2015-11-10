@@ -151,8 +151,9 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 #navigation ul li.first a { padding-left: 38px; }
 #navigation a.nav-btn { display: none; }
 #navigation ul li ul {  padding: 0; position: absolute;display: none;visibility: hidden;}
-#navigation ul li ul li {  display: block; background: url(images/nav-border.png) no-repeat right 0;}
+#navigation ul li ul li {float:none;  display: block; background: url(images/navigation2.png) repeat-x 0 0;}
 #navigation ul li ul li:hover { }
+#navigation ul li ul li a {padding-left: 38px; }
 #navigation ul li:hover ul{   display: block; opacity: 1; visibility: visible; }
 
 .slider-holder { position: relative; z-index: 5; }
