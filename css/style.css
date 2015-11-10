@@ -150,6 +150,10 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 #navigation ul li.active a  { text-decoration: none; color: #2b9208; }
 #navigation ul li.first a { padding-left: 38px; }
 #navigation a.nav-btn { display: none; }
+#navigation ul li ul {  padding: 0; position: absolute;display: none;visibility: hidden;}
+#navigation ul li ul li {  display: block; background: url(images/nav-border.png) no-repeat right 0;}
+#navigation ul li ul li:hover { }
+#navigation ul li:hover ul{   display: block; opacity: 1; visibility: visible; }
 
 .slider-holder { position: relative; z-index: 5; }
 .slider-holder span.slider-b { background: url(images/slider-bottom.png) no-repeat 0 0;  width: 990px; height: 30px; position: absolute; bottom: 0px; left: 0px; z-index: 100;}
