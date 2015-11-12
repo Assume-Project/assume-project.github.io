@@ -64,10 +64,18 @@ padding: 1%;
     }
 		.Box
 		{
+			background: rgba(191,231,80,1);
+			background: -moz-radial-gradient(center, ellipse cover, rgba(191,231,80,1) 0%, rgba(127,173,0,0.71) 100%);
+			background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(191,231,80,1)), color-stop(100%, rgba(127,173,0,0.71)));
+			background: -webkit-radial-gradient(center, ellipse cover, rgba(191,231,80,1) 0%, rgba(127,173,0,0.71) 100%);
+			background: -o-radial-gradient(center, ellipse cover, rgba(191,231,80,1) 0%, rgba(127,173,0,0.71) 100%);
+			background: -ms-radial-gradient(center, ellipse cover, rgba(191,231,80,1) 0%, rgba(127,173,0,0.71) 100%);
+			background: radial-gradient(ellipse at center, rgba(191,231,80,1) 0%, rgba(127,173,0,0.71) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfe750', endColorstr='#7fad00', GradientType=1 );
+
 				display: block;
-				background-color: #D0F5A9;
 				border: 1px solid #E6E6E6;
-				border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; -o-border-radius: 6px;
+				border-radius: 20px; -moz-border-radius: 20px; -webkit-border-radius: 20px; -o-border-radius: 20px;
 				border-width: thin;
 				padding: 4%;
 				margin-left: 15px;
