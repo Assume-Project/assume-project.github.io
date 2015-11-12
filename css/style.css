@@ -113,6 +113,26 @@ padding: 1%;
 
 		}
 
+/*Event*/
+.event
+{
+	padding: 5%;
+}
+.event h1
+{
+	text-align: center;
+	margin: 1%;
+}
+.event .image
+{
+	text-align: center;
+}
+.event .image img
+{
+	max-height: 500px;
+	max-width: 100%;
+}
+
 
 
 /*font-family: 'Ubuntu', sans-serif;*/
