@@ -165,7 +165,7 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 #navigation ul li { float: left; padding-right: 2px; line-height: 52px; background: url(images/nav-border.png) no-repeat right 0;  font-size: 13px; text-transform: uppercase; }
 #navigation ul li a { display: block; padding: 0 32px 0 28px; color: #878787;  }
 #navigation ul li a:hover,
-#navigation ul li.active a  { text-decoration: none; color: #2b9208; }
+#navigation ul li.active >a  { text-decoration: none; color: #2b9208; }
 #navigation ul li.first a { padding-left: 38px; }
 #navigation a.nav-btn { display: none; }
 #navigation ul li ul {  padding: 0; position: absolute;display: none;visibility: hidden;}
