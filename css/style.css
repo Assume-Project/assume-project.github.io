@@ -330,7 +330,7 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 	#navigation ul { display: none; position: absolute; top: 36px; left: 0;  width: 100%;}
 	#navigation ul li { display: block; line-height: 36px !important; float: none; background: url(images/navigation.png) repeat 0 0;  }
 	#navigation ul li a { padding: 0 22px; }
-	#navigation ul li.first a { padding-left: 26px; display: none; }
+
 
 	.m-slider { background: #f3f3f3;  }
 	.slider-holder { position: relative; margin: 0 auto; width: 310px; }
