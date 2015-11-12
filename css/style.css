@@ -314,7 +314,7 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 
 
 @media only screen and ( -webkit-min-device-pixel-ratio: 2) {
-	body { width: auto; }
+	body { width: auto; zoom:300%; }
 	.shell { width: 320px; margin: 0 auto;  }
 	#header { position: relative; z-index: 1000; padding-left: 0; padding-right: 0;  }
 	#logo { float: none; display: block; margin: 0 auto; padding: 0 0 0 0;  }
