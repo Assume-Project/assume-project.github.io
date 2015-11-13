@@ -46,16 +46,20 @@ padding: 10px;
     }
     .Heading
     {
-        display: table-row;
+        display: block;
+        clear: both;
         font-weight: bold;
         text-align: center;
     }
     .Row
     {
+        display: block;
+        clear: both;
     }
     .Cell
     {
-        display: inline-table;
+        display: inline-table;;
+        clear: right;
       /*  border: solid;
         border-width: thin;*/
         padding-left: 5px;
@@ -267,7 +271,6 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 	body { width: 768px; }
 	.shell { width: 748px; }
 	#navigation ul li a { padding: 0 22px;  }
-	#navigation ul li.first a { padding-left: 26px; }
 
 	.slider-holder { position: relative; }
 	.slider-holder span.slider-b { background: url(images/t-slider-bottom.png) no-repeat 0 0;  width: 748px; height: 30px; position: absolute; bottom: -13px; left: 0px; z-index: 100;}
@@ -402,7 +405,6 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 }
 
 @media only screen and ( max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi)  {
-
 	#navigation a.nav-btn span.arr { background: url(images/nav-arr@2x.png) no-repeat 0 0; -webkit-background-size: 13px 18px; -moz-background-size: 13px 18px; background-size: 13px 18px; }
 	#navigation a.nav-btn span.arr.active { background: url(images/nav-arr@2x.png) no-repeat 0 bottom; -webkit-background-size: 13px 18px; -moz-background-size: 13px 18px; background-size: 13px 18px; }
 
