@@ -310,6 +310,10 @@ article, aside, details, footer, header, menu, nav, section { display: block; }
 	table.tableizer-table {
 	font-size: 14px;
 	}
+	.minimize
+	{
+		zoom:50%;
+	}
 }
 
 
