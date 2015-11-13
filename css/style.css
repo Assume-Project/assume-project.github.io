@@ -21,13 +21,13 @@ margin-right: 15%;
 .tableizer-table td {
 margin: 3px;
 border: 1px solid #ccc;
-padding: 1%;
+padding: 5px;
 }
 .tableizer-table th {
 background-color: #04B431;
 color: #FFF;
 font-weight: bold;
-padding: 1%;
+padding: 10px;
 }
 
 
