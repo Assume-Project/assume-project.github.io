@@ -55,6 +55,17 @@ table.tableizer-table {
     margin-right: 15%;
 }
 
+table.project-table {
+    color: #FFF;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin-left: auto;
+    margin-bottom: 5%;
+    margin-right: auto;
+    margin-top: auto;
+}
+
 .tableizer-table td {
     margin: 3px;
     border: 1px solid #ccc;
