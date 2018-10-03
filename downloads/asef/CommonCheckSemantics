@@ -1,0 +1,152 @@
+Approach
+********
+
+- TODO: write a proper description of the approach
+- TODO: need precise notions of "check", "check category", what's in a check category, "performed" checks, ...
+- TODO: actual specification of classes
+    Category, Synopsis, Classification, Severity (?), Description, Relevant C dialects, References, Continue-on-error options,
+    ...only specify classes which do not have subclasses.
+- interpret check categories as sets of checks
+- if a check category is named "X.Y", then X.Y is a subset of X
+- interpret each tool's own check categories as sets, too, e.g. AS:"Initializer range" is a subset of "numeric.overflow"
+- unified presentation of results produced by different tools by LCP of the rsp. check category names
+
+
+Notation
+********
+
+PS:X := Polyspace check category X
+QPR:X := QPR check category X
+AS:X := Astree alarm category X
+
+
+
+Assertions
+**********
+
+Category                                    Description                                                                   Contains as subset
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+assert                                      An assertion failed.                                                          PS:ASRT
+assert.user                                 A user-defined assertion failed.                                              AS:"Assertion failure", QPR:user.assertion
+assert.custom                               A custom assertion failed.                                                    QPR:custom.assertion, AS:"User defined alarm", AS:"Check failure"
+
+
+
+
+Numeric checks
+*****************
+
+Note: "overflow" == overflow or underflow
+
+Category                                    Description                                                                   Contains as subset
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+numeric
+numeric.overflow                            Numeric variable overflow                                                     PS:OVFL, AS:"Overflow in arithmetic", AS:"Initializer range"
+numeric.overflow.float                      Overflow of floating-point value
+numeric.overflow.int                        Overflow of signed integers (result of operation out of range)                QPR:arithmetic.overflow, QPR:shift.overflow
+numeric.overflow.conversion                 Overflow in integer conversion                                                AS:"Overflow in conversion"
+numeric.overflow.conversion.explicit        Overflow in explicit integer conversion                                       QPR:explicit.conversion.overflow
+numeric.overflow.conversion.implicit        Overflow in implicit integer conversion                                       QPR:implicit.conversion.overflow
+numeric.divbyzero                           Division by zero                                                              PS: ZDV
+numeric.divbyzero.float                     Division by zero (float)                                                      AS:"Float division by zero"
+numeric.divbyzero.int                       Division by zero (int)                                                        AS:"Integer division by zero", AS:"Integer modulo by zero", AS:"Undefined integer modulo", QPR:divbyzero
+numeric.shift                               Invalid shift operation                                                       PS: SHF
+numeric.shift.rhs                           Invalid right-hand side of shift                                              AS:"Wrong range of second shift argument"
+numeric.shift.rhs.amount                    Shift amount is too large                                                     QPR:shift.by.amount
+numeric.shift.rhs.negative                  Shift amount is negative                                                      QPR:shift.by.negative
+numeric.shift.lhs                           Invalid left-hand side of shift                                               QPR:shift.of.negative
+numeric.floatop.result.nan                  Invalid floating-point operation                                              PS:INVALID_FLOAT_OP
+numeric.floatop.result.subnormal            The operation results in a subnormal float                                    PS:SUBNORMAL_FLOAT
+numeric.floatop.arg.nan                     Invalid floating-point operation                                              AS:"Float argument can be NaN or infinity"
+
+
+Control flow
+************
+
+Category                                    Description                                                                    Contains as subset
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+controlflow
+controlflow.nonterminating                  Nonterminating program execution
+controlflow.nonterminating.loop             Nonterminating loop                                                            PS:NTL, QPR:nonterminating.loop
+controlflow.nonterminating.functioncall     Nonterminating function call                                                   PS:NTC
+controlflow.recursivecall                   Recursive function call                                                        Astree:"Recursive function call"
+controlflow.missingfunctiondefinition       Function body missing                                                          Astree:"Stub invocation"
+controlflow.unreachablecode                 Unreachable code
+controlflow.deadcode                        Effectless code
+
+
+
+Data flow
+*********
+
+Category                                    Description                                                                   Contains as subset
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+dataflow
+dataflow.writeafterwrite                    Write to memory location without read since last write                        AS:"Write after write"
+dataflow.initialization                     Use of non-initialized variables                                              AS:"Use of uninitialized variables", PS:NIRV, PS:NIP
+dataflow.initialization.local               Use of non-initialized local variable                                         PS:NIVL, QPR:initizlized.local
+dataflow.initialization.global              Use of non-initialized global variable                                        PS:NIV, QPR:initialized.global, AS:"Reading global/static variable that was never written to"
+
+
+
+C Standard library
+******************
+
+Category                                    Description                                                                   Contains as subset
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+stdlib                                                                                                                    PS:STD_LIB
+stdlib.memalloc                             Invalid arguments for dynamic allocation/deallocation function                AS:"Invalid argument in dynamic memory ..."
+stdlib.memaccses                            Invalid arguments for memory-accessing function                               AS:"Invalid memcpy/bzero/..."
+stdlib.numeric                              Square root of negative number                                                AS:"Square root of negative number"
+
+
+
+Memory
+******
+
+Category                                    Description                                                                   Contains as subset
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+mem                                                                                                                       PS:COR
+mem.ptr                                     Invalid pointer-related operation
+mem.ptr.deref                               Invalid pointer dereference                                                   PS:IDP, QPR:pointer.dereference
+mem.ptr.deref.misaligned                    Dereference of misaligned pointer                                             AS:"Dereference of mis-aligned pointer"
+mem.ptr.deref.invalid                       Dereference of pointer with invalid address                                   AS:"Dereference of null or invalid pointer"
+mem.ptr.deref.field                         Incorrect field dereference                                                   AS:"Incorrect field dereference"
+mem.ptr.deref.function                      Pointer to invalid or null function                                           AS:"Pointer to invalid or null function"
+mem.ptr.op.arrayoutofbounds                 Array index out of bounds                                                     PS:OBAI, QPR:arrayindex, AS:"Out-of-bound array index"
+mem.ptr.op                                  Invalid operation on pointer
+mem.ptr.op.arrayoutofbounds                 Array index out of bounds                                                     PS:OBAI, QPR:arrayindex, AS:"Out-of-bound array index"
+mem.ptr.op.comparison                       Invalid pointer comparison                                                    AS:"Invalid pointer comparison"
+mem.ptr.op.invalidarithmetic                Arithmetics on invalid pointers                                               AS:"Arithmetics on invalid pointers" AS:"Subtraction of invalid pointers"
+mem.ptr.op.offset                           Offset range overflow                                                         AS:"Offset range overflow"
+mem.funcall                                 Invalid function call via pointer                                             QPR:functionpointer
+mem.funcall.args                            Invalid function call due to arguments
+mem.funcall.args.num                        Wrong number of arguments in function call                                    AS:"Function call with wrong number of arguments"
+mem.funcall.args.unnamed                    Call of a function with an unnamed argument                                   AS:"Function with unnamed arguments"
+mem.funcall.args.incompatibletype           Call of a function with incompatible argument type                            AS:"Incompatible parameter type in a function call",  AS:"Reinterpreting incompatible parameter type in a function call"
+mem.funcall.retval                          Invalid function call due to return value
+mem.funcall.retval.incompatibletype         Call of a function with incompatible return type                              AS:"Incompatible function return type", AS:"Reinterpreting incompatible function return type"
+mem.write.constant                          Write to constant memory                                                      AS:"Attempt to write to a constant"
+
+
+
+Asynchronous execution
+**********************
+
+Category                                    Description                                                                   Contains as subset
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+async.racecondition.readwrite               Concurrent read and write to/of memory location                               AS:"Read/Write data race"
+async.racecondition.writewrite              Concurrent writes to memory location                                          AS:"Write/Write data race"
+
+
+
+Miscellaneous
+*************
+
+Category                                    Description                                                                   Contains as subset
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+misc                                        Checks not otherwise classified within the ASSUME check category hierarchy    AS:"Invalid usage of concurrency intrinsic",
+                                                                                                                          AS:"Invalid usage of OS services",
+                                                                                                                          AS:"Run-time error during the evaluation of a constant expression"
+misra
+warning
